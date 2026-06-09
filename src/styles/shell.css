@@ -17,7 +17,7 @@
   border-bottom: 1px solid var(--shell-border);
   background: var(--shell-header-bg);
   backdrop-filter: blur(10px);
-  box-shadow: 0 1px 0 rgba(15, 23, 42, 0.04);
+  box-shadow: 0 1px 0 var(--shadow);
 }
 
 .app-brand {
@@ -27,6 +27,7 @@
   font-weight: 700;
   letter-spacing: -0.03em;
   font-size: 1.05rem;
+  color: var(--shell-fg);
 }
 
 .app-brand-icon {
@@ -36,7 +37,7 @@
   width: 1.75rem;
   height: 1.75rem;
   border-radius: 8px;
-  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  background: linear-gradient(135deg, var(--accent-gradient-start), var(--accent-gradient-end));
   color: #fff;
   font-size: 0.85rem;
 }
@@ -53,28 +54,28 @@
   color: var(--muted);
   padding: 0.25rem 0.6rem;
   border-radius: 999px;
-  background: #f1f5f9;
+  background: var(--shell-surface-muted);
 }
 
 .vault-status--unlocked {
-  color: #166534;
-  background: #dcfce7;
+  color: var(--accent);
+  background: var(--accent-soft);
 }
 
 .btn-ghost {
   padding: 0.4rem 0.75rem;
   border-radius: 8px;
   border: 1px solid var(--shell-border);
-  background: #fff;
-  color: #334155;
+  background: var(--shell-surface);
+  color: var(--shell-fg);
   cursor: pointer;
   font-size: 0.85rem;
   font-weight: 500;
 }
 
 .btn-ghost:hover {
-  background: #f8fafc;
-  border-color: #cbd5e1;
+  background: var(--shell-hover);
+  border-color: var(--muted-light);
 }
 
 .app-body {
@@ -101,7 +102,7 @@
   flex-direction: column;
   padding: 1rem;
   border-right: 1px solid var(--shell-border);
-  background: #fff;
+  background: var(--shell-surface);
   min-height: 0;
 }
 
@@ -116,16 +117,16 @@
   padding: 0.55rem 0.75rem;
   border-radius: 10px;
   border: none;
-  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  background: linear-gradient(135deg, var(--accent-gradient-start), var(--accent-gradient-end));
   color: #fff;
   font-weight: 600;
   font-size: 0.9rem;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.25);
+  box-shadow: 0 2px 8px var(--accent-shadow);
 }
 
 .btn-new-note:hover {
-  background: linear-gradient(135deg, #4f46e5, #4338ca);
+  background: linear-gradient(135deg, var(--accent-gradient-end), var(--accent-hover));
 }
 
 .sidebar-search input {
@@ -133,28 +134,28 @@
   padding: 0.5rem 0.65rem;
   border-radius: 10px;
   border: 1px solid var(--shell-border);
-  background: #f8fafc;
+  background: var(--shell-surface-muted);
   color: inherit;
   font-size: 0.88rem;
 }
 
 .sidebar-search input:focus {
-  background: #fff;
-  border-color: #a5b4fc;
+  background: var(--shell-surface);
+  border-color: var(--accent-focus);
 }
 
 .btn-sidebar {
   padding: 0.45rem 0.65rem;
   border-radius: 8px;
   border: 1px solid var(--shell-border);
-  background: #fff;
-  color: #475569;
+  background: var(--shell-surface);
+  color: var(--muted);
   font-size: 0.85rem;
   cursor: pointer;
 }
 
 .btn-sidebar:hover {
-  background: #f8fafc;
+  background: var(--shell-hover);
 }
 
 .sidebar-search-actions {
@@ -173,11 +174,11 @@
 }
 
 .sidebar-feedback--error {
-  color: #b91c1c;
+  color: var(--danger);
 }
 
 .sidebar-feedback--success {
-  color: #15803d;
+  color: var(--success);
 }
 
 .sidebar-empty {
@@ -209,17 +210,21 @@
 }
 
 .sidebar-note-item:hover {
-  background: #f8fafc;
-  border-color: #e2e8f0;
+  background: var(--shell-hover);
+  border-color: var(--shell-border);
 }
 
 .sidebar-note-item--selected {
   background: var(--accent-soft);
-  border-color: #c7d2fe;
+  border-color: var(--accent-border);
+}
+
+.sidebar-note-item--selected .sidebar-note-title {
+  color: var(--accent-hover);
 }
 
 .sidebar-note-item--secure .sidebar-note-title {
-  color: #5b21b6;
+  color: var(--secure);
 }
 
 .sidebar-note-title {
@@ -244,64 +249,53 @@
 
 .sidebar-note-date {
   font-size: 0.72rem;
-  color: #94a3b8;
+  color: var(--muted-light);
 }
 
 .sidebar-meta {
   margin: 0.75rem 0 0;
   font-size: 0.78rem;
-  color: #94a3b8;
+  color: var(--muted-light);
   padding-top: 0.5rem;
-  border-top: 1px solid #f1f5f9;
+  border-top: 1px solid var(--shell-border);
 }
 
 .workspace-main {
   padding: 1.5rem;
   overflow: auto;
   min-height: 0;
-  background: linear-gradient(180deg, #f8fafc 0%, var(--shell-bg) 100%);
+  background: linear-gradient(180deg, var(--shell-surface) 0%, var(--shell-bg) 100%);
 }
 
 .editor-panel {
   max-width: 52rem;
   margin: 0 auto;
+  min-height: calc(100vh - 4rem);
+  display: flex;
+  flex-direction: column;
 }
 
 .editor-empty {
+  flex: 1;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: 4rem 2rem;
-  border: 1px dashed #cbd5e1;
-  border-radius: 16px;
-  background: #fff;
-  color: var(--muted);
+  padding: 2rem;
 }
 
-.editor-empty-icon {
-  font-size: 2.5rem;
-  margin-bottom: 0.75rem;
-}
-
-.editor-empty h2 {
-  margin: 0 0 0.5rem;
-  color: #1e293b;
-  font-size: 1.25rem;
-}
-
-.editor-empty p {
+.editor-empty-text {
   margin: 0;
-  max-width: 24rem;
+  font-size: 0.95rem;
+  color: var(--muted-light);
+  letter-spacing: -0.01em;
 }
 
 .editor-form {
   border: 1px solid var(--shell-border);
   border-radius: 16px;
   padding: 1.5rem;
-  background: #fff;
-  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.06);
+  background: var(--shell-surface);
+  box-shadow: 0 4px 24px var(--shadow);
 }
 
 .editor-form-header {
@@ -331,7 +325,7 @@
 .secure-toggle input {
   width: 1rem;
   height: 1rem;
-  accent-color: var(--accent);
+  accent-color: var(--secure);
 }
 
 .secure-toggle-label {
@@ -340,14 +334,15 @@
   gap: 0.35rem;
   font-size: 0.88rem;
   font-weight: 600;
-  color: #5b21b6;
+  color: var(--secure);
 }
 
 .secure-hint {
   margin: 0 0 0.75rem;
   font-size: 0.82rem;
-  color: #7c3aed;
-  background: #f5f3ff;
+  color: var(--secure);
+  background: var(--secure-soft);
+  border: 1px solid var(--secure-border);
   padding: 0.5rem 0.65rem;
   border-radius: 8px;
 }
@@ -362,7 +357,7 @@
 .note-field span {
   font-size: 0.78rem;
   font-weight: 600;
-  color: #475569;
+  color: var(--muted);
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
@@ -372,15 +367,15 @@
   padding: 0.65rem 0.75rem;
   border-radius: 10px;
   border: 1px solid var(--shell-border);
-  background: #f8fafc;
+  background: var(--shell-surface-muted);
   color: inherit;
   transition: border-color 0.15s, background 0.15s;
 }
 
 .note-field input:focus,
 .note-field textarea:focus {
-  background: #fff;
-  border-color: #a5b4fc;
+  background: var(--shell-surface);
+  border-color: var(--accent-focus);
 }
 
 .note-field textarea {
@@ -390,7 +385,7 @@
 }
 
 .note-field textarea:read-only {
-  background: #f1f5f9;
+  background: var(--shell-surface-muted);
   color: var(--muted);
   cursor: not-allowed;
 }
@@ -410,7 +405,7 @@
   color: #fff;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.2);
+  box-shadow: 0 2px 8px var(--accent-shadow);
 }
 
 .btn-primary:hover {
@@ -421,28 +416,28 @@
   padding: 0.5rem 1rem;
   border-radius: 10px;
   border: 1px solid var(--shell-border);
-  background: #fff;
-  color: #475569;
+  background: var(--shell-surface);
+  color: var(--muted);
   font-weight: 500;
   cursor: pointer;
 }
 
 .btn-secondary:hover {
-  background: #f8fafc;
+  background: var(--shell-hover);
 }
 
 .btn-danger {
   padding: 0.5rem 1rem;
   border-radius: 10px;
-  border: 1px solid #fecaca;
-  background: #fff;
+  border: 1px solid var(--danger-border);
+  background: var(--shell-surface);
   color: var(--danger);
   font-weight: 500;
   cursor: pointer;
 }
 
 .btn-danger:hover {
-  background: #fef2f2;
+  background: var(--danger-soft);
 }
 
 .form-feedback {
@@ -462,7 +457,7 @@
 .vault-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(15, 23, 42, 0.45);
+  background: var(--overlay);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -477,10 +472,11 @@
 .vault-modal {
   width: 100%;
   max-width: 24rem;
-  background: #fff;
+  background: var(--shell-surface);
   border-radius: 16px;
   padding: 1.5rem;
-  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.2);
+  box-shadow: 0 20px 50px var(--shadow-strong);
+  border: 1px solid var(--shell-border);
 }
 
 .vault-modal h2 {

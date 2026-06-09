@@ -1,18 +1,41 @@
 :root {
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.5;
-  color: #0f172a;
-  background: #eef2f7;
-  --shell-bg: #eef2f7;
-  --shell-fg: #0f172a;
-  --shell-border: #dbe3ee;
-  --shell-header-bg: #ffffffee;
-  --accent: #4f46e5;
-  --accent-hover: #4338ca;
-  --accent-soft: #eef2ff;
-  --danger: #dc2626;
-  --success: #15803d;
-  --muted: #64748b;
+  color: var(--shell-fg);
+  background: var(--shell-bg);
+
+  /* Warm paper + forest green */
+  --shell-bg: #f4f1ea;
+  --shell-fg: #1c1917;
+  --shell-border: #e3ddd3;
+  --shell-header-bg: #faf7f2ee;
+  --shell-surface: #faf7f2;
+  --shell-surface-muted: #efeae1;
+  --shell-hover: #f0ebe3;
+
+  --accent: #047857;
+  --accent-hover: #065f46;
+  --accent-soft: #ecfdf5;
+  --accent-border: #a7f3d0;
+  --accent-focus: #6ee7b7;
+  --accent-shadow: rgba(4, 120, 87, 0.22);
+  --accent-gradient-start: #059669;
+  --accent-gradient-end: #047857;
+
+  --secure: #b45309;
+  --secure-soft: #fffbeb;
+  --secure-border: #fde68a;
+
+  --danger: #b91c1c;
+  --danger-soft: #fef2f2;
+  --danger-border: #fecaca;
+  --success: #047857;
+  --muted: #78716c;
+  --muted-light: #a8a29e;
+
+  --overlay: rgba(28, 25, 23, 0.4);
+  --shadow: rgba(28, 25, 23, 0.08);
+  --shadow-strong: rgba(28, 25, 23, 0.18);
 }
 
 *,

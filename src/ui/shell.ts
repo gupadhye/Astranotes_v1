@@ -77,9 +77,7 @@ function renderShellHtml(): string {
         <main class="workspace-main">
           <div class="editor-panel" data-editor-panel>
             <div class="editor-empty" data-editor-empty>
-              <div class="editor-empty-icon" aria-hidden="true">📝</div>
-              <h2>Your notes workspace</h2>
-              <p>Select a note from the sidebar or create a new one to get started.</p>
+              <p class="editor-empty-text">Select a note or create a new one</p>
             </div>
             <div class="editor-form" data-editor-form hidden>
               <div class="editor-form-header">
